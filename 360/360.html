@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/360.css">
+</head>
+<body>
+	<div class="" id="fullpage">
+		<!-- 第一屏 -->
+		<div class="section first">
+		<!-- logo -->
+			<div class="logo"></div>
+			<!-- 文字 --> 
+			<div class="text">
+				<img src="./images/text_1.png" alt="">
+				<img src="./images/text_2.png" alt="">
+				<img src="./images/text_3.png" alt="">
+				<img src="./images/text_4.png" alt="">
+				<img src="./images/text_5.png" alt="">
+				<img src="./images/text_6.png" alt="">
+				<img src="./images/text_7.png" alt="">
+				<img src="./images/text_8.png" alt="">
+			</div>
+			<!-- 其他 -->
+			<div class="info"></div>
+		</div>
+		<!-- 第二屏 -->
+		<div class="section second">
+			<!-- 盾牌 -->
+			<div class="shield">
+				<img src="./images/shield_1.png" alt="">
+				<img src="./images/shield_2.png" alt="">
+				<img src="./images/shield_3.png" alt="">
+				<img src="./images/shield_4.png" alt="">
+				<img src="./images/shield_5.png" alt="">
+				<img src="./images/shield_6.png" alt="">
+				<img src="./images/shield_7.png" alt="">
+				<img src="./images/shield_8.png" alt="">
+				<img src="./images/shield_9.png" alt="">
+			</div>
+			<!-- 其他信息 -->
+			<div class="info"></div>
+		</div>
+		<!-- 第三屏 -->
+		<div class="section third">
+			<!-- 其他信息 -->
+			<div class="info"></div>
+			<!-- 圆 -->
+			<div class="circle"></div>
+			<!-- 火箭 -->
+			<div class="rocket"></div>
+		</div>
+		<!-- 第四屏 -->
+		<div class="section fourth">
+		<!-- 导航 -->
+			<div class="nav">
+			<!-- 搜索框 -->
+				<div class="search">
+				<!-- 智取威虎山 -->
+					<div class="keys"></div>
+					<!-- 内容隐藏框 -->
+					<div class="wrap">
+					<!-- 内容 -->
+						<div class="result"></div>
+					</div>
+				</div>
+			</div>
+			<div class="info"></div>
+		</div>
+		<!-- 第五屏 -->
+		<div class="section fifth"></div>
+	</div>
+
+
+	
+	<script src="jquery.min.js"></script>
+	<script src="jquery.fullPage.min.js"></script>
+	<script>
+		$('#fullpage').fullpage({
+			sectionsColor:['#0da5d6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+			//每滚动一次，都会触发回调函数
+			afterLoad:function (link,key) {
+				$('.section').removeClass('current')
+
+				setTimeout(function () {
+					$('.section').eq(key - 1).addClass('current')
+				},50)
+				
+			}
+		});
+
+	</script>
+</body>
+</html>
